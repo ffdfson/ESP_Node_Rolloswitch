@@ -99,11 +99,19 @@ var filterJSON=function(s){
  
 	
 var rollo433=function(){//lokal ESP_Node_Rolloswitch
-	var ESP8266URL="./action?rkey=Q00QFF0F0Q00Q10&rollo=";//
+	var ESP8266URL="./action?rkey=F011F00QQ0F0000&rollo=";//
+	var ESP8266URL2="./action?rkey=FFQFF001FFFF1F0&rollo=";//
+	var ESP8266URL3="./action?rkey=Q01F10Q1Q0FF00F&rollo=";//
 	var URLbefehle={
 		"UP":	ESP8266URL+"UP",
 		"DOWN":	ESP8266URL+"DOWN",
-		"STOP":	ESP8266URL+"STOP"
+		"STOP":	ESP8266URL+"STOP",
+		"UP2":	 ESP8266URL2+"UP2",
+		"DOWN2": ESP8266URL2+"DOWN2",
+		"STOP2": ESP8266URL2+"STOP2",
+		"UP3":	 ESP8266URL3+"UP3",
+		"DOWN3": ESP8266URL3+"DOWN3",
+		"STOP3": ESP8266URL3+"STOP3"
 	}
 	var getNodeByAttr=function(node,nodeattribute){//z.B. <div data-option="" /> get Element mit "data-option" 
 		var nodelist=[];
@@ -142,6 +150,8 @@ var rollo433=function(){//lokal ESP_Node_Rolloswitch
 			getpostData(URLbefehle[jsonbefehl.action]+'&time='+tim.getTime(),fresult);
 			if(typeof jsonbefehl.dauer==="number"){
 				setTimeout( function(){sendebefehl({"action":"STOP"},undefined)} , jsonbefehl.dauer*1000);
+				setTimeout( function(){sendebefehl({"action":"STOP2"},undefined)} , jsonbefehl.dauer*1000);
+				setTimeout( function(){sendebefehl({"action":"STOP3"},undefined)} , jsonbefehl.dauer*1000);
 			}
 		}
 	}
@@ -214,7 +224,7 @@ var timerliste=function(){
 	
 	var saveandreload=function(now){
 		if(savetimeout!=undefined)clearTimeout(savetimeout);
-		//timerdata -> außer.id=="new"
+		//timerdata -> auÃŸer.id=="new"
 		var i,d,s="";
 		for(i=0;i<timerdata.length;i++){
 			d=timerdata[i];
@@ -300,7 +310,7 @@ var timerliste=function(){
 		return input;
 	}
 	var addBefehle=function(node,dat){
-		var befehllist=['UP','DOWN','STOP'];
+		var befehllist=['UP','DOWN','STOP','UP2','DOWN2','STOP2','UP3','DOWN3','STOP3'];
 		var i,o;
 		for(i=0;i<befehllist.length;i++){
 			o=cE(node,"option");
