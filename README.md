@@ -1,3 +1,5 @@
+Das vorhandene Projekt erweitert für 3 Rolläden
+
 # Projekt: Wifi-433 Rollo Schalter
 
 Hier habe ich ein elektrischem Rollo mit 433Mhz Fernbedienung über ein NodeMCU mit ESP12-E bedienbar gemacht.
