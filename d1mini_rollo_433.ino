@@ -54,8 +54,8 @@ const char* rollo_UP3 =   "Q01F10Q1Q0FF00FF0F1Q";//3x(oder 3x mehr) + 6x F0F1Q
 const char* rollo_DOWN3 = "Q01F10Q1Q0FF00FF0110";//3x(oder 3x mehr) + 6x F0110
 const char* rollo_STOP3 = "Q01F10Q1Q0FF00FFFFFF";//3x
 
-#define WIFI_SSID         "Fritzbox44"
-#define WIFI_PASSWORD     "Looser242istklasse!"
+#define WIFI_SSID         "xxxx"
+#define WIFI_PASSWORD     "xxxxxxx"
 
 #define rolloWiederholungen 6 //evtl. weniger? 10?
 #define rolloPulseLength  280 //!
